@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "eslint-plugin-import-helpers"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/display-name": "off",
+    "linebreak-style": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^react$/", "/^next/", "/^@next/"],
+          ["/^@react/", "/^@azul/", "module"],
+          ["/^@data/", "/^@domain/", "/^@infra/", "/^@main/", "/^@i18n/"],
+          [
+            "/^@components/",
+            "/^@context/",
+            "/^@hooks/",
+            "/^@router/",
+            "/^@utils/",
+            "/^@assets/",
+            "/^@constants/",
+            "/^@providers/",
+            "/^@styles/",
+            "/^@flows/"
+          ],
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  }
+}

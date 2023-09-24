@@ -1,0 +1,10 @@
+# Ignore artifacts:
+.next
+.vscode
+node_modules
+public
+build
+dist
+coverage
+**/*.js
+assets
